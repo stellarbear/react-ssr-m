@@ -1,7 +1,8 @@
 import React from "react";
 import { AppBar, Button, Divider, Drawer, IconButton, Toolbar } from "@material-ui/core";
 import { createStyles, Theme, makeStyles } from "@material-ui/core/styles";
-import { Clear, Menu } from "@material-ui/icons";
+import Clear from "@material-ui/icons/Clear";
+import Menu from "@material-ui/icons/Menu";
 import { I18nContext } from "../components/I18nProvider";
 import LanguagePicker from "../components/LanguagePicker";
 import ElevationScroll from "./ElevationScroll";

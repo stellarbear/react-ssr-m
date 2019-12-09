@@ -6,6 +6,9 @@ const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 //https://github.com/TypeStrong/ts-loader/tree/master/examples/fork-ts-checker-webpack-plugin
 const config: webpack.Configuration = {
     mode: "development",
+    stats: {
+        modules: false,
+    },
     optimization: {
         usedExports: true,
     },

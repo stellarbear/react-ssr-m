@@ -1,8 +1,8 @@
-//import { CssBaseline, Hidden, Toolbar, } from "@material-ui/core";
+import { Hidden, Toolbar, } from "@material-ui/core";
 import React from "react";
 import { withRouter } from "react-router-dom";
 import { RouteComponentProps } from "react-router";
-//import Mobile from "./Mobile";
+import Mobile from "./Mobile";
 import Desktop from "./Desktop";
 import { I18nContext } from "../components/I18nProvider";
 
@@ -11,9 +11,9 @@ interface INavigationProps extends RouteComponentProps {
 }
 
 const NavigationWrapper: React.FC<INavigationProps> = ({
+	rtl = false,
 	children,
 	history,
-	rtl = false
 }) => {
 	const { m } = React.useContext(I18nContext);
 
@@ -22,14 +22,20 @@ const NavigationWrapper: React.FC<INavigationProps> = ({
 
 	return (
 		<React.Fragment>
-			<Desktop handleNavigation={handleNavigation} />
+			<Hidden smUp>
+				<Mobile rtl={rtl} handleNavigation={handleNavigation} />
+			</Hidden>
+			<Hidden xsDown>
+				<Desktop handleNavigation={handleNavigation} />
+			</Hidden>
+			<Toolbar />
 			{children}
 		</React.Fragment >
 	);
 }
 
 export default
-withRouter(NavigationWrapper);
+	withRouter(NavigationWrapper);
 
 /*
 <CssBaseline />
