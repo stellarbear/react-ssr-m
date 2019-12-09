@@ -12,9 +12,9 @@
     "prod:server": "webpack --config ./webpack/production/server.ts --watch",
     "prod:client": "webpack --config ./webpack/production/client.ts --watch",
     "prod:run": "nodemon --watch build --exec \"node build/server/bundle.js\"",
-		"lint": "eslint \"./src/**/*.{ts,tsx}\"",
-		"lint:fix": "yarn lint --fix --quiet",
-		"clear": "rimraf build"
+    "lint": "eslint \"./src/**/*.{ts,tsx}\"",
+    "lint:fix": "yarn lint --fix --quiet",
+    "clear": "rimraf build"
   },
   "lint-staged": {
     "*.{ts,tsx}": "eslint"
@@ -43,6 +43,7 @@
     "@types/react-router-dom": "^5.1.3",
     "@types/react-transition-group": "^4.2.3",
     "@types/webpack": "^4.41.0",
+    "@types/webpack-dev-server": "^3.9.0",
     "@types/webpack-merge": "^4.1.5",
     "@typescript-eslint/eslint-plugin": "^2.10.0",
     "@typescript-eslint/parser": "^2.10.0",
@@ -63,6 +64,7 @@
     "typescript": "^3.7.3",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.9.0",
     "webpack-merge": "^4.2.2",
     "webpack-node-externals": "^1.7.2"
   }

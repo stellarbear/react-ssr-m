@@ -35,7 +35,7 @@ const NavigationWrapper: React.FC<INavigationProps> = ({
 }
 
 export default
-	withRouter(NavigationWrapper);
+withRouter(NavigationWrapper);
 
 /*
 <CssBaseline />
