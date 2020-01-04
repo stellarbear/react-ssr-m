@@ -1,13 +1,13 @@
 import express from 'express';
-import markup from './markup';
+import compression from 'compression';
+import middleware from './middleware';
 
 const app = express();
 
+app.use(compression());
 app.use(express.static('build/client'));
-app.get('*', (req: express.Request, res: express.Response) => {
-	res.send(markup(req.url));
-});
+app.get('*', middleware);
 
-app.listen(3000, () => {
-	console.log('Listening on port 3000');
+app.listen(3003, () => {
+	console.log('Listening on port 3003');
 });
